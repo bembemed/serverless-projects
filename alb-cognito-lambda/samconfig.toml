@@ -1,0 +1,34 @@
+# More information about the configuration file can be found here:
+# https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html
+version = 0.1
+
+[default.global.parameters]
+stack_name = "alb-cognito-lambda"
+
+[default.build.parameters]
+cached = true
+parallel = true
+
+[default.validate.parameters]
+lint = true
+
+[default.deploy.parameters]
+capabilities = "CAPABILITY_NAMED_IAM"
+confirm_changeset = true
+resolve_s3 = true
+s3_prefix = "alb-cognito-lambda"
+region = "us-east-1"
+parameter_overrides = "VpcId=\"vpc-0b55549fa4f4eb32e\" Subnets=\"subnet-09293b10c2bbf393a,subnet-0fe6c7be08928f167\" ALBName=\"alb\" CertificateARN=\"arn:aws:acm:us-east-1:793911908102:certificate/d81c794e-4f23-4978-8d84-45d7d52de8fd\" Subdomain=\"pattern.mmsrim.com\" R53HostedZoneId=\"Z0060805D63RB0YUDCJ6\" ALBHostedZoneId=\"Z35SXDOTRQ7X7K\" LambdaFunctionName=\"pattern\" LambdaLayerARN=\"arn:aws:lambda:us-east-1:793911908102:layer:PrettyTable:1\""
+image_repositories = []
+
+[default.package.parameters]
+resolve_s3 = true
+
+[default.sync.parameters]
+watch = true
+
+[default.local_start_api.parameters]
+warm_containers = "EAGER"
+
+[default.local_start_lambda.parameters]
+warm_containers = "EAGER"
